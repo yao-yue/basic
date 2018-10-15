@@ -41,3 +41,5 @@
     flex-shrink 收缩因子  默认值为1
     flex-basis 拉伸因子  没写则flex-basis默认为width 
     flex  
+
+推荐网站： http://flexboxfroggy.com/
