@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双飞翼布局</title>  
+    <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                /* 宽度低于550px就会出下面的滚动条 */
+                min-width: 550px;
+            }
+            .header, .footer{
+                background-color: #aaa;
+                text-align: center;
+            }
+            .content .column {
+                height: 50px;
+                line-height: 50px;
+                float: left;
+            }
+            .content {
+                overflow: hidden;
+            }
+            .content #center {
+                width: 100%;
+                background-color: pink;
+            }
+            .content #left,.content #right {
+                background: yellow;
+                /* width: 200px; */
+            }
+
+            .content #center .center-inner {
+                padding-left: 200px;
+                padding-right: 150px;
+            }
+
+            #left {
+                width: 200px;
+                margin-left:-100%;
+            }
+            #right {
+                width: 150px;
+                margin-left: -150px;
+            }
+        </style>
+</head>
+<!-- 双飞翼优势：没有加定位，所有的东西都在文档流内，没有改变层级 -->
+
+<!-- 两种实现的对比
+1.两种布局方式都是把主列放在文档流最前面，使主列优先加载
+2.两种布局都是让三列浮动，然后通过负外边距形成三列布局
+3.不同之处在于如何处理中间主列的位置：
+    圣杯布局是利用父容器的左右padding+ 两个从列relative相对定位
+    双飞翼布局是把主列嵌套在一个新的父块中利用主列的左右外边距进行布局调整 -->
+
+
+<body>
+        <div class="header">头</div>
+        <div class="content">
+            <div id= "center" class="column">
+            <div class="center-inner">中间</div>
+            </div>
+            <div id= "left" class="column">左</div>
+            <div id= "right" class="column">右</div>
+        </div>
+        <div class="footer">脚</div>
+</body>
+</html>
