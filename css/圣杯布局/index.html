@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            /* 宽度低于550px就会出下面的滚动条 */
+            min-width: 550px;
+        }
+        .header, .footer{
+            background-color: #aaa;
+        }
+        .container {
+            padding-left: 200px;
+            padding-right: 150px;
+        }
+        .container .column {
+            float: left;
+            height: 200px;
+        }
+        #center {
+            background-color: pink;
+            width: 100%;
+        }
+        #left {
+            background-color: #bfc;
+            width: 200px;
+            margin-left:-100%;
+            position: relative;
+            right: 200px;
+        }
+        #right {
+            background-color: yellow;
+            width: 150px;
+            margin-right: -150px;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        .clearfix:before,
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<!-- 两边固定，当中自使用
+当中列要完整显示
+当中列要优先加载 -->
+
+<!-- 浮动搭建完整的布局框架
+margin为负值调整旁边两列的位置（使三列部署到一行）
+使用相对定位：调整旁边两列的位置，使两列移到两头 -->
+
+<body>
+    <div class="header">头</div>
+    <div class="container   clearfix">
+        <div id= "center" class="column">中间</div>
+        <div id= "left" class="column">左</div>
+        <div id= "right" class="column">右</div>
+    </div>
+    <div class="footer">脚</div>
+</body>
+</html>
