@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黏连式布局</title>
+    <!-- main元素短的时候footer黏连在底部，当main元素多的时候可以footer可以在最底部 -->
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        height: 100%;
+    }
+    #wrap {
+        min-height: 100%;
+        background: pink;
+        text-align: center;
+    }
+    #wrap .main {
+        padding-bottom: 50px;
+    }
+    #footer {
+        height: 50px;
+        margin-top: -50px;
+        line-height: 50px;
+        background-color: #aaa;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="main">
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <!-- <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p> 
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p>
+            <p>这里是中心文字</p> -->
+        </div>
+    </div>
+    <div id="footer">footer</div>
+</body>
+</html>
