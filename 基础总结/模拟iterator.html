@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iterator</title>
+</head>
+
+<body>
+
+    <script>
+        function myIterator(arr) {
+            let nextIndex = 0;
+            return {
+                next: function () {
+                    return { value: arr[nextIndex++], done: nextIndex < arr.length ? false : true }
+                }
+            }
+        }
+        let arr = [1, 4, 5, 'avc'];
+        let iteratorobj = myIterator(arr);
+        console.log(iteratorobj.next());
+        console.log(iteratorobj.next());
+        console.log(iteratorobj.next());
+        console.log(iteratorobj.next());
+        console.log(iteratorobj.next());
+        console.log(iteratorobj.next());
+
+
+        // 在指定数据结构上部署iterator接口
+        //当使用for of去遍历一个数据结构时，首先就是去找Symbol.iterator，如果没有找到就抛出 xxx is not iterator
+        let targetData = {
+            [Symbol.iterator]: function () {
+                let nextIndex = 0;
+                return {
+                    next: function () {
+                        return { value: arr[nextIndex++], done: nextIndex < arr.length ? false : true }
+                    }
+                }
+            }
+        }
+
+
+        // ...运算符也是用，解构和赋值也是iterator
+    </script>
+</body>
+
+</html>
