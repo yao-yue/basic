@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            padding: 10px;
+            box-sizing: border-box;
+            width: 600px;
+            background-color: pink;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .right {
+            /* float: left; */
+            width: 220px;
+            display: flex;
+            flex-direction: column;
+            line-height: 24px;
+        }
+
+        .right .up {
+            font-size: 20px;
+        }
+
+        .right .center {
+            color: #b1b1b1;
+            font-size: 16px;
+            display:inline-block;
+            margin-top: 10px;
+            margin-bottom: 10px;    
+        }
+
+        .right .down {
+            font-size: 18px;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .clearfix:before,
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 给左边的图片添加一个清除浮动，让他图片高度可以撑开父盒子，
+        当右边文字盒子的高度不够时，父盒子取图片高度
+        当右边文字高度很多时，父盒子取右边文字高度 -->
+        <img src="./test.jpg" alt="" class="left clearfix">
+        <div class="right clearfix">
+            <p class="up">高级人像摄影后期</p>
+            <p class="center">需要在15441189755学完</p>
+            <p class="down">￥ 9998.00</p>
+        </div>
+    </div>
+</body>
+
+</html>
