@@ -4,21 +4,21 @@ var superagent=require('superagent');
 var app=express();
 
 app.get('/',function(req,res,next){
-    superagent.get('https://m.4008823823.com.cn/kfcmwos/indexMenu.htm?')//请求页面地址
-        .end(function(err,sres){//页面获取到的数据
+    superagent.get('https://m.4008823823.com.cn/')//请求页面地址
+        .end(function(err,obj){//页面获取到的数据
             if(err) return next(err);
 
-            var $=cheerio.load(sres.text);//用cheerio解析页面数据
+            var $=cheerio.load(obj.text);//用cheerio解析页面数据
             var arr=[];
 
-            $("#app").each(function(index,element){//下面类似于jquery的操作，前端的小伙伴们肯定很熟悉啦
-                var $eleItem=$(element).find('.scroll-tab flex flex-y li');
-                arr.push(
-                    {
-                        title: $eleItem.text(),
-                        src: $eleItem.attr('src')
-                    }
-                );
+            $(".flex-1.flex flex-y").each(function(index,element){
+                console.log(index)
+                console.log(element);
+                var $eleItem=$(element).find('img');
+                arr.push({
+                    img: `https:`+$eleItem.attr('src'),
+                    index: index
+                })
             });
             res.send(arr);
         })

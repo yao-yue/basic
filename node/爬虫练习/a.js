@@ -4,7 +4,8 @@ let express = require('express')
 let app = express()
 const URI = 'https://daily.zhihu.com/'
 
-app.get('/', async (req, res) => {  let result = await request(URI)//异步请求网页
+app.get('/', async (req, res) => {  
+    let result = await request(URI)//异步请求网页
     let data = []  
     let elements = $('a', '.main-content .wrap .box', result)//解析出网页里的a元素
     elements.map((i, ele) => {    
