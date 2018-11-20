@@ -10,14 +10,14 @@ app.get('/',function(req,res,next){
 
             var $=cheerio.load(obj.text);//用cheerio解析页面数据
             var arr=[];
+            let title = $('#sectionLeft > li.active > span > img').find('src');
 
-            $(".flex-1.flex flex-y").each(function(index,element){
+            $("#sectionLeft > li.active > span > img").each(function(index,element){
                 console.log(index)
                 console.log(element);
                 var $eleItem=$(element).find('img');
                 arr.push({
-                    img: `https:`+$eleItem.attr('src'),
-                    index: index
+                    title
                 })
             });
             res.send(arr);
