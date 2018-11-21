@@ -3,18 +3,22 @@ const puppeteer = require('puppeteer');
 let scrape = async () => {
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
-  
+    let scrollEnable = false;
+    let scrollY = 0; //每次滚动的步长
     await page.goto('https://m.4008823823.com.cn/');
     await page.click('#sectionLeft > li> span > img');
     await page.waitFor(1000);
     
-      for(let i = 0; i< 40000; i+200) {
-        scrollEnable = await page.evaluate(() => {
+      while (scrollEnable) {
+        scrollEnable = await page.evaluate((scrollY) => {
           let sc = document.querySelector('#section > .scroll-tab-content');
-          sc.style.transform = `translate(0px, -${i}px) translateZ(0px)`;
-        });
-        await page.waitFor(600)
+          sc.style.transform = `translate(0px, -4000px) translateZ(0px)`;
+          scrollY += 200;
+          return 40000 > scrollY ? true : false
+        }, scrollY);
+        await page.waitFor(1000)
       }
+   
       
     
 
