@@ -1,37 +1,47 @@
 const puppeteer = require('puppeteer');
 
 let scrape = async () => {
-    const browser = await puppeteer.launch({headless: false});
-    const page = await browser.newPage();
-    let scrollEnable = false;
-    let scrollY = 0; //每次滚动的步长
-    await page.goto('https://m.4008823823.com.cn/');
-    await page.click('#sectionLeft > li> span > img');
-    await page.waitFor(1000);
-    
-      while (scrollEnable) {
-        scrollEnable = await page.evaluate((scrollY) => {
-          let sc = document.querySelector('#section > .scroll-tab-content');
-          sc.style.transform = `translate(0px, -4000px) translateZ(0px)`;
-          scrollY += 200;
-          return 40000 > scrollY ? true : false
-        }, scrollY);
-        await page.waitFor(1000)
-      }
-   
-      
-    
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto('https://m.4008823823.com.cn/');
+  const length = await page.evaluate(() => {
+    return document.querySelectorAll('#sectionLeft > li').length
+  })
+ 
+  for(let i = 1; i<=length; i++) {
+    await page.click(`#sectionLeft > li:nth-child(${i})`)
+    let len = await page.evaluate((i) => {
+      return document.querySelectorAll(`.scroll-tab-content > dl:nth-child(${i}) > .product`).length
+    }, i)
+    console.log(len)
+    console.log('---------------')
+    for(let j = 1; j<=len; j++){
+      console.log(j)
+      await page.click(`.scroll-tab-content > dl:nth-child(${i})>.product:nth-child(${j})`);
+    }
+    setTimeout(() => {},600);
+  }
 
-    const result = await page.evaluate(() => {
-      return [...document.querySelectorAll('#section > div > dl:nth-child(2) > div:nth-child(1) > div > p')].map(item => {
-        return item.innerText
-      })
-      // return document.querySelector('#sectionLeft > li > p').innerText;
-    });
-    browser.close();
-    return result;
+
+  // await page.evaluate(() => {
+  //   let sc = document.querySelector('#section > .scroll-tab-content');
+  //   while(scrollY < 40000){
+  //     sc.style.transform = `translate(0px, -${scrollY}px) translateZ(0px)`;
+  //     scrollY += 500;
+  //   }
+  // })
+await page.waitFor(10000);  
+
+
+  const result = await page.evaluate(() => {
+     return  [...document.querySelectorAll('.scroll-tab-content > dl > .product > .desc > p')].map(item => {
+      return item.innerText
+    })
+  });
+  browser.close();
+  return result;
 };
 
 scrape().then((value) => {
-    console.log(value); // Success!
+  console.log(value); // Success!
 });
