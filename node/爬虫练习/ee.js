@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 let scrape = async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  await page.goto('https://m.4008823823.com.cn/');
+  await page.goto('https://m.4008823823.com.cn/kfcmwos/indexMenu.htm?');
   const length = await page.evaluate(() => {
     return document.querySelectorAll('#sectionLeft > li').length
   })
@@ -39,7 +39,7 @@ await page.waitFor(2000);
              
             //  let p = i.getElementsByClassName('.desc .p').innerText;
             //  let money = i.getElementsByClassName('.desc > .price > .showPrice > span > .fcm').innerText;
-             return arr
+             return arr.values
                               
          });
       return  {

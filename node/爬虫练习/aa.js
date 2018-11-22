@@ -27,15 +27,18 @@ let scrape = async () => {
     
   }
 await page.waitFor(4000);  
+await page.addScriptTag({url: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'})
 
-  let $ = cheerio.load(page)
-  const result = await page.evaluate(($) => {
-    let a = $(`#section > div > dl:nth-child(2) > .product:nth-child(2)`).innerText
+  const result = await page.evaluate(() => {
+    var $ = window.$
+    // let a = $(`#section > div > dl:nth-child(2) > .product:nth-child(2)`)
+    // return a
+    let a = [...Array.from($('.scroll-tab-content > dl'))].map(item => {
+      let dt = $(`.scroll-tab-content > dl`).find('dt').innerText;
+      return dt
+    })
     return a
-    //  return  [...document.querySelectorAll('.scroll-tab-content > dl > .product > .desc > p')].map(item => {
-    //   return item.innerText
-    // })
-  }, $);
+  });
   browser.close();
   return result;
 };
