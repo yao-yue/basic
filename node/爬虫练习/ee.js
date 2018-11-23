@@ -39,7 +39,7 @@ await page.waitFor(2000);
              
             //  let p = i.getElementsByClassName('.desc .p').innerText;
             //  let money = i.getElementsByClassName('.desc > .price > .showPrice > span > .fcm').innerText;
-             return arr.values
+             return i.firstChild.src
                               
          });
       return  {
