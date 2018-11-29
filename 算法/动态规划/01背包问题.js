@@ -1,5 +1,7 @@
 // 动态规划是将问题分解成相互依赖的子问题
 
+
+// ****  01背包问题解决函数
 function packMaxValue(capacity, weights, values, n) {
     let i, w, a, b, pmv = [];       
     for( i = 0; i <=n ; i++) {
@@ -30,6 +32,8 @@ let values = [3, 4, 5],
 console.log(packMaxValue(capacity, weights, values, n));
 let pmv = packMaxValue(capacity, weights, values, n);
 
+
+//显示函数
 function findValues(n, capacity, pmv, weights, values) {
     let i = n, k = capacity;
     console.log('解决方案包含以下物品：');
@@ -46,4 +50,5 @@ function findValues(n, capacity, pmv, weights, values) {
     console.log(`总价值${pmv[n][capacity]}`)
 }
 
+//调用显示函数 ---------- 
 findValues(n, capacity, pmv, weights, values);
