@@ -7,20 +7,14 @@ export default {
     {
       menuUrl: '/',
       id: 0,
-      menuName: '会员管理',
-      icon: 'icon-home',
-      childPermissions: [
-        {
-          menuName: '会员列表',
-          menuUrl: '/'
-        },
-      ],
+      menuName: '财务统计',
+      icon: 'el-icon-document',
     },
     {
       menuUrl: '/1',
       id: 1,
-      menuName: '城市管理',
-      icon: 'icon-home',
+      menuName: '用户管理',
+      icon: 'el-icon-info',
       childPermissions: [
         {
           menuName: '城市列表',
@@ -31,8 +25,8 @@ export default {
     {
       menuUrl: '/2',
       id: 2,
-      menuName: '资讯活动',
-      icon: 'icon-home',
+      menuName: '轮播图管理',
+      icon: 'el-icon-picture',
       childPermissions: [
         {
           menuName: '资讯列表',
@@ -51,8 +45,8 @@ export default {
     {
       menuUrl: '/3',
       id: 3,
-      menuName: '办公室管理',
-      icon: 'icon-home',
+      menuName: '经典问答',
+      icon: 'el-icon-question',
       childPermissions: [
         {
           menuName: '办公室列表',
@@ -63,8 +57,8 @@ export default {
     {
       menuUrl: '/4',
       id: 4,
-      menuName: '会议室管理',
-      icon: 'icon-home',
+      menuName: '情感秘籍',
+      icon: 'el-icon-view',
       childPermissions: [
         {
           menuName: '会议室列表',
@@ -83,8 +77,8 @@ export default {
     {
       menuUrl: '/5',
       id: 5,
-      menuName: '服务定制',
-      icon: 'icon-home',
+      menuName: '公告管理',
+      icon: 'el-icon-news',
       childPermissions: [
         {
           menuName: '办公服务列表',
@@ -103,8 +97,8 @@ export default {
     {
       menuUrl: '/6',
       id: 6,
-      menuName: '预约管理',
-      icon: 'icon-home',
+      menuName: '快速提问',
+      icon: 'el-icon-question',
       childPermissions: [
         {
           menuName: '会议室预定列表',
@@ -119,8 +113,8 @@ export default {
     {
       menuUrl: '/7',
       id: 7,
-      menuName: '订单管理',
-      icon: 'icon-home',
+      menuName: '测试题库',
+      icon: 'el-icon-edit-outline',
       childPermissions: [
         {
           menuName: '会议室订单列表',
@@ -139,8 +133,8 @@ export default {
     {
       menuUrl: '/8',
       id: 8,
-      menuName: '意见反馈',
-      icon: 'icon-home',
+      menuName: '订单管理',
+      icon: 'el-icon-tickets',
       childPermissions: [
         {
           menuName: '意见列表',
@@ -151,8 +145,40 @@ export default {
     {
       menuUrl: '/9',
       id: 9,
+      menuName: '钱包流水',
+      icon: 'el-icon-goods',
+      childPermissions: [
+        {
+          menuName: '管理员列表',
+          menuUrl: '/accountList'
+        },
+        {
+          menuName: '角色权限',
+          menuUrl: '/roleList'
+        }
+      ],
+    },
+    {
+      menuUrl: '/10',
+      id: 10,
+      menuName: '系统设置',
+      icon: 'el-icon-setting',
+      childPermissions: [
+        {
+          menuName: '管理员列表',
+          menuUrl: '/accountList'
+        },
+        {
+          menuName: '角色权限',
+          menuUrl: '/roleList'
+        }
+      ],
+    },
+    {
+      menuUrl: '/11',
+      id: 11,
       menuName: '权限管理',
-      icon: 'icon-home',
+      icon: 'el-icon-menu',
       childPermissions: [
         {
           menuName: '管理员列表',

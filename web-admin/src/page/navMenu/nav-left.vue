@@ -15,6 +15,7 @@
         :index="menuItem.menuUrl"
       >
         <template slot="title">
+           <i v-bind:class='menuItem.icon'></i>
           <span>{{menuItem.menuName}}</span>
         </template>
         <el-menu-item
@@ -73,7 +74,7 @@ export default {
 };
 </script>
 
-<style  lang="scss">
+<style  lang="scss" scoped>
 .el-left-menu {
   height: 90%;
   position: fixed;
@@ -111,6 +112,7 @@ export default {
 .el-menu-item {
   min-width: auto !important;
   overflow-y: auto;
+  
 }
 .el-menu-item-group__title {
   padding-top: 0px !important;
