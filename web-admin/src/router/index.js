@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// 登录修改密码
+// 登录修改密码忘记密码
 const login = resolve => require(['@/page/passport/login'], resolve)
 const resetPassword = resolve => require(['@/page/passport/reset-password'], resolve)
+const forgetPassword = resolve => require(['@/page/passport/forget-password'], resolve)
 
 // 会员管理
 const memberList = resolve => require(['@/page/member/list'], resolve)
@@ -84,6 +85,11 @@ export default new Router({
       path: '/reset-password',
       name: 'reset-password',
       component: resetPassword
+    },
+    {
+      path: '/forget-password',
+      name: 'forget-password',
+      component: forgetPassword
     },
 
     // 会员管理

@@ -3,9 +3,10 @@
         <div class="login-wrap">
             <div class="login-title">心理咨询小程序后台</div>
             <div id="darkbannerwrap"></div>
+            <!-- v-model="something" native限制符  @keyup.enter="login"键盘回车事件-->
             <input type="text" @keyup.enter="login" v-model="account" placeholder="请输入账号">
             <input type="password" @keyup.enter="login"  v-model="password" placeholder="请输入密码">
-            <div class="forgetPassword">忘记密码？</div>
+            <div class="forgetPassword" @click="goForget">忘记密码？</div>
              <div class="login-button">
                 <button class="btn btn-primary" type="button"  @click="login">登录</button>
             </div>
@@ -29,6 +30,9 @@ export default {
         }
     },
     methods:{
+        goForget() {
+            this.$router.push('/forget-password')
+        },
         async login(){
             const param = {
                 userName: this.account, 
