@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="login-wrap">
-      <div class="login-title">联合办公管理后台-重置密码</div>
+      <div class="login-title">心理咨询小程序管理后台-重置密码</div>
       <div id="darkbannerwrap"></div>
       <input type="text" @keyup.enter="modifyPassword" v-model="oldPassword" placeholder="旧密码">
       <input type="password" @keyup.enter="modifyPassword" v-model="password" placeholder="新密码">

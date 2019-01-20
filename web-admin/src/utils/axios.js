@@ -21,7 +21,7 @@ Axios.interceptors.request.use(function (config) {
   
   // 访问网络时加载loading,防止用户多次操作
   loading = vm.$loading({
-    lock: true,
+    lock: true, 
     text: 'Loading',
     spinner: 'el-icon-loading',
     background: 'rgba(0, 0, 0, 0.7)'

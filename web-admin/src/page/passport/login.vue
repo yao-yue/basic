@@ -1,10 +1,11 @@
 <template>
     <div class="wrap">
         <div class="login-wrap">
-            <div class="login-title">联合办公管理后台</div>
+            <div class="login-title">心理咨询小程序后台</div>
             <div id="darkbannerwrap"></div>
             <input type="text" @keyup.enter="login" v-model="account" placeholder="请输入账号">
             <input type="password" @keyup.enter="login"  v-model="password" placeholder="请输入密码">
+            <div class="forgetPassword">忘记密码？</div>
              <div class="login-button">
                 <button class="btn btn-primary" type="button"  @click="login">登录</button>
             </div>
@@ -114,7 +115,14 @@ export default {
         margin-bottom: 25px;
         text-indent:1em;
     }
-    
+    .forgetPassword {
+        width: 100%;
+        font-size: 10px;
+        color: #444444;
+        margin-top: -10px;
+        padding-bottom: 10px;
+        text-align: end;
+    }
     
     .login-tips {
         margin-top: 12px;
