@@ -6,67 +6,46 @@ const login = resolve => require(['@/page/passport/login'], resolve)
 const resetPassword = resolve => require(['@/page/passport/reset-password'], resolve)
 const forgetPassword = resolve => require(['@/page/passport/forget-password'], resolve)
 
-// 会员管理
-const memberList = resolve => require(['@/page/member/list'], resolve)
+// 财务统计
+const countChart = resolve => require(['@/page/financialStatistics/count-chart'], resolve)
 
-// 城市管理
-const cityList = resolve => require(['@/page/city/list'], resolve)
+// 用户管理
+const userManage = resolve => require(['@/page/userManage/user-manage'], resolve)
 
-// 资讯活动
-const campaignList = resolve => require(['@/page/campaign/list'], resolve)
-const campaignEdit = resolve => require(['@/page/campaign/edit-item'], resolve)
-const campaignActiveList = resolve => require(['@/page/campaign/active-list'], resolve)
-const campaignActiveEdit = resolve => require(['@/page/campaign/active-edit'], resolve)
-const campaignSwiperList = resolve => require(['@/page/campaign/swiper-list'], resolve)
-const campaignSwiperEdit = resolve => require(['@/page/campaign/swiper-edit'], resolve)
+// 轮播图管理
+const slideImgManage = resolve => require(['@/page/slideImgManage/slideImg-manage'], resolve)
 
-// 办公室管理
-const officeList = resolve => require(['@/page/office/list'], resolve)
-const officeEdit = resolve => require(['@/page/office/edit-item'], resolve)
-const officeDetail = resolve => require(['@/page/office/detail'], resolve)
+// 经典问答
+const classicQA = resolve => require(['@/page/classicQA/classic-qa'], resolve)
 
-// 会议室管理
-const meetingList = resolve => require(['@/page/meeting/list'], resolve)
-const meetingEdit = resolve => require(['@/page/meeting/edit-item'], resolve)
-const meetingDetail = resolve => require(['@/page/meeting/detail'], resolve)
-const meetingTypeList = resolve => require(['@/page/meeting/type-list'], resolve)
-const meetingSwiperList = resolve => require(['@/page/meeting/swiper-list'], resolve)
-const meetingSwiperEdit = resolve => require(['@/page/meeting/swiper-edit'], resolve)
+// 情感秘籍
+const emtionCheats = resolve => require(['@/page/emtionalCheats/emtion-cheats'], resolve)
 
-// 服务定制
-const serviceList = resolve => require(['@/page/service/list'], resolve)
-const serviceEdit = resolve => require(['@/page/service/edit-item'], resolve)
-const serviceDetail = resolve => require(['@/page/service/detail'], resolve)
-const serviceGoodsList = resolve => require(['@/page/service/goods-list'], resolve)
-const serviceLiveList = resolve => require(['@/page/service/live-list'], resolve)
-const serviceLiveEdit = resolve => require(['@/page/service/live-edit'], resolve)
-const serviceLiveDetail = resolve => require(['@/page/service/live-detail'], resolve)
-const serviceAssortList = resolve => require(['@/page/service/assort-list'], resolve)
-const serviceSwiperList = resolve => require(['@/page/service/swiper-list'], resolve)
-const serviceSwiperEdit = resolve => require(['@/page/service/swiper-edit'], resolve)
+// 公告管理
+const noticeManage = resolve => require(['@/page/noticeManage/notice-manage'], resolve)
 
-// 预约管理
-const appointList = resolve => require(['@/page/appoint/list'], resolve)
-const appointDetail = resolve => require(['@/page/appoint/detail'], resolve)
-const appointOfficeList = resolve => require(['@/page/appoint/office-list'], resolve)
-const appointOfficeDetail = resolve => require(['@/page/appoint/office-detail'], resolve)
+// 快速提问
+const quickQuestion = resolve => require(['@/page/quickQuestion/quick-question'], resolve)
+
+// 测试题库
+const testBank = resolve => require(['@/page/testBank/test-bank'], resolve)
 
 // 订单管理
-const orderList = resolve => require(['@/page/order/meetList'], resolve)
-const orderDetail = resolve => require(['@/page/order/meetDetail'], resolve)
-const orderServiceList = resolve => require(['@/page/order/serviceList'], resolve)
-const orderServerDetail = resolve => require(['@/page/order/serverDetail'], resolve)
-const orderRefundList = resolve => require(['@/page/order/refundList'], resolve)
-const orderRefundDetail = resolve => require(['@/page/order/refundDetail'], resolve)
+const listenOrder = resolve => require(['@/page/orderManage/listen-order'], resolve)
+const questionOrder = resolve => require(['@/page/orderManage/question-order'], resolve)
 
-// 意见反馈
-const feedBackList = resolve => require(['@/page/feedBack/list'], resolve)
+// 钱包流水
+const walletInfo = resolve => require(['@/page/walletInfo/wallet-info'], resolve)
+
+// 系统设置
+const aboutOurTerm = resolve => require(['@/page/systemSet/about-ourTerm'], resolve)
+const questionProcess = resolve => require(['@/page/systemSet/question-process'], resolve)
+const rechargeActive = resolve => require(['@/page/systemSet/recharge-active'], resolve)
+const testPhase = resolve => require(['@/page/systemSet/test-phase'], resolve)
 
 // 权限管理
-const roleList = resolve => require(['@/page/system/roleList'], resolve)
-const roleEdit = resolve => require(['@/page/system/roleEdit'], resolve)
-const roleAccountList = resolve => require(['@/page/system/accountList'], resolve)
-const roleAccountEdit = resolve => require(['@/page/system/accountEdit'], resolve)
+const account = resolve => require(['@/page/authManage/account'], resolve)
+const character = resolve => require(['@/page/authManage/character'], resolve)
 
 
 Vue.use(Router)
@@ -92,233 +71,105 @@ export default new Router({
       component: forgetPassword
     },
 
-    // 会员管理
+    // 财务统计
     {
       path: '/',
-      name: 'member-list',
-      component: memberList
+      name: 'count-chart',
+      component: countChart
     },
 
-    // 城市管理
+    // 用户管理
     {
-      path: '/city-list',
-      name: 'city-list',
-      component: cityList
+      path: '/user-manage',
+      name: 'user-manage',
+      component: userManage
     },
 
-    // 资讯活动
+    // 轮播图管理
     {
-      path: '/campaign-list',
-      name: 'campaign-list',
-      component: campaignList
+      path: '/slideImg-manage',
+      name: 'slideImg-manage',
+      component: slideImgManage
     },
+    // 经典问答
     {
-      path: '/edit-item',
-      name: 'edit-item',
-      component: campaignEdit
+      path: '/classic-qa',
+      name: 'classic-qa',
+      component: classicQA
     },
+    // 情感秘籍
     {
-      path: '/active-list',
-      name: 'active-list',
-      component: campaignActiveList
+      path: '/emtion-cheats',
+      name: 'emtion-cheats',
+      component: emtionCheats
     },
+    // 公告管理
     {
-      path: '/active-edit',
-      name: 'active-edit',
-      component: campaignActiveEdit
+      path: '/notice-manage',
+      name: 'notice-manage',
+      component: noticeManage
     },
+    // 快速提问
     {
-      path: '/campaign-swiper-list',
-      name: 'campaign-swiper-list',
-      component: campaignSwiperList
+      path: '/quick-question',
+      name: 'quick-question',
+      component: quickQuestion
     },
+    // 测试题库
     {
-      path: '/campaign-swiper-edit',
-      name: 'campaign-swiper-edit',
-      component: campaignSwiperEdit
+      path: '/test-bank',
+      name: 'test-bank',
+      component: testBank
     },
-
-    // 办公室管理
-    {
-      path: '/office-list',
-      name: 'office-list',
-      component: officeList
-    },
-    {
-      path: '/office-edit',
-      name: 'office-edit',
-      component: officeEdit
-    },
-    {
-      path: '/office-detail',
-      name: 'office-detail',
-      component: officeDetail
-    },
-
-    // 会议室管理
-    {
-      path: '/meeting-list',
-      name: 'meeting-list',
-      component: meetingList
-    },
-    {
-      path: '/meeting-edit',
-      name: 'meeting-edit',
-      component: meetingEdit
-    },
-    {
-      path: '/meeting-detail',
-      name: 'meeting-detail',
-      component: meetingDetail
-    },
-    {
-      path: '/meeting-type-list',
-      name: 'meeting-type-list',
-      component: meetingTypeList
-    },
-    {
-      path: '/meeting-swiper-list',
-      name: 'meeting-swiper-list',
-      component: meetingSwiperList
-    },
-    {
-      path: '/meeting-swiper-edit',
-      name: 'meeting-swiper-edit',
-      component: meetingSwiperEdit
-    },
-    
-    // 服务定制
-    {
-      path: '/service-list',
-      name: 'service-list',
-      component: serviceList
-    },
-    {
-      path: '/service-edit',
-      name: 'service-edit',
-      component: serviceEdit
-    },
-    {
-      path: '/service-detail',
-      name: 'service-detail',
-      component: serviceDetail
-    },
-    {
-      path: '/service-goods-list',
-      name: 'service-goods-list',
-      component: serviceGoodsList
-    },
-    {
-      path: '/service-live-list',
-      name: 'service-live-list',
-      component: serviceLiveList
-    },
-    {
-      path: '/service-live-edit',
-      name: 'service-live-edit',
-      component: serviceLiveEdit
-    },
-    {
-      path: '/service-live-detail',
-      name: 'service-live-detail',
-      component: serviceLiveDetail
-    },
-    {
-      path: '/service-assort-list',
-      name: 'service-assort-list',
-      component: serviceAssortList
-    },
-    {
-      path: '/service-swiper-list',
-      name: 'service-swiper-list',
-      component: serviceSwiperList
-    },
-    {
-      path: '/service-swiper-edit',
-      name: 'service-swiper-edit',
-      component: serviceSwiperEdit
-    },
-
-    // 预约管理
-    {
-      path: '/appoint-list',
-      name: 'appoint-list',
-      component: appointList
-    },
-    {
-      path: '/appoint-detail',
-      name: 'appoint-detail',
-      component: appointDetail
-    },
-    {
-      path: '/appoint-office-list',
-      name: 'appoint-office-list',
-      component: appointOfficeList
-    },
-    {
-      path: '/appoint-office-detail',
-      name: 'appoint-office-detail',
-      component: appointOfficeDetail
-    },
-
     // 订单管理
     {
-      path: '/meetList',
-      name: 'meetList',
-      component: orderList
+      path: '/listen-order',
+      name: 'listen-order',
+      component: listenOrder
     },
     {
-      path: '/meetDetail',
-      name: 'meetDetail',
-      component: orderDetail
+      path: '/question-order',
+      name: 'question-order',
+      component: questionOrder
+    },
+    // 钱包流水
+    {
+      path: '/wallet-info',
+      name: 'wallet-info',
+      component: walletInfo
+    },
+    // 系统设置(关于我们,提问流程,)
+    {
+      path: '/about-ourTerm',
+      name: 'about-ourTerm',
+      component: aboutOurTerm
     },
     {
-      path: '/serviceList',
-      name: 'serviceList',
-      component: orderServiceList
+      path: '/question-process',
+      name: 'question-process',
+      component: questionProcess
     },
     {
-      path: '/serverDetail',
-      name: 'serverDetail',
-      component: orderServerDetail
+      path: '/recharge-active',
+      name: 'recharge-active',
+      component: rechargeActive
     },
     {
-      path: '/refundList',
-      name: 'refundList',
-      component: orderRefundList
+      path: '/test-phase',
+      name: 'test-phase',
+      component: testPhase
     },
-    {
-      path: '/refundDetail',
-      name: 'refundDetail',
-      component: orderRefundDetail
-    },
-
-    // 反馈
-    {
-      path: '/feedBackList',
-      name: 'feedBackList',
-      component: feedBackList
-    },
-
     // 权限管理
     {
-      path: '/roleList',
-      name: 'roleList',
-      component: roleList
+      path: '/account',
+      name: 'account',
+      component: account
     },
     {
-      path: '/roleEdit',
-      name: 'roleEdit',
-      component: roleEdit
-    },
-    {
-      path: '/accountList',
-      name: 'accountList',
-      component: roleAccountList
-    },
-    {
-      path: '/accountEdit',
-      name: 'accountEdit',
-      component: roleAccountEdit
-    }]
+      path: '/character',
+      name: 'character',
+      component: character
+    }
+
+  ]
 })

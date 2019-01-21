@@ -1,10 +1,10 @@
 <template>
-    <div>账号管理页面</div>
+    <div>关于我们页面</div>
 </template>
 
 <script>
 export default {
-    name: 'account',
+    name: 'about-ourTerm',
 }
 </script>
 

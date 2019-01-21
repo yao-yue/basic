@@ -1,10 +1,10 @@
 <template>
-    <div>账号管理页面</div>
+    <div>用户管理页面</div>
 </template>
 
 <script>
 export default {
-    name: 'account',
+    name: 'user-manage',
 }
 </script>
 

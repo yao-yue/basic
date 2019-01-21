@@ -1,10 +1,10 @@
 <template>
-    <div>账号管理页面</div>
+    <div>提问订单页面</div>
 </template>
 
 <script>
 export default {
-    name: 'account',
+    name: 'question-order',
 }
 </script>
 

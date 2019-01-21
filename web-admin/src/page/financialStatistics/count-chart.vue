@@ -1,13 +1,14 @@
 <template>
-    <div>账号管理页面</div>
+    <div>财务页面</div>
 </template>
 
 <script>
 export default {
-    name: 'account',
+    name: 'count-chart',
 }
 </script>
 
 <style lang="scss" scoped>
 
 </style>
+
