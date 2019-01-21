@@ -60,7 +60,7 @@ export default {
       
     },
     {
-      menuUrl: '/###',
+      menuUrl: '/1',
       id: 8,
       menuName: '订单管理',
       icon: 'el-icon-tickets',
@@ -83,7 +83,7 @@ export default {
       
     },
     {
-      menuUrl: '/###',
+      menuUrl: '/2',
       id: 10,
       menuName: '系统设置',
       icon: 'el-icon-setting',
@@ -107,7 +107,7 @@ export default {
       ],
     },
     {
-      menuUrl: '/###',
+      menuUrl: '/3',
       id: 11,
       menuName: '权限管理',
       icon: 'el-icon-menu',

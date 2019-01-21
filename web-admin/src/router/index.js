@@ -73,7 +73,7 @@ export default new Router({
 
     // 财务统计
     {
-      path: '/',
+      path: '/count-chart',
       name: 'count-chart',
       component: countChart
     },

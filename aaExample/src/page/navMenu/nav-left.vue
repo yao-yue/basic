@@ -1,8 +1,7 @@
-
 <template>
   <el-col class="el-left-menu" :span="3" >
     <el-menu
-     background-color="#324157"
+      background-color="#324157"
       text-color="#bfcbd9"
       :default-active="active"
       :active="active"
@@ -10,23 +9,12 @@
       router
       unique-opened
       >
-       <el-menu-item
-          v-for="item in routeListA"
-          :key="item.id"
-          :index="item.menuUrl"
-        >
-        <template slot="title" >
-          <i v-bind:class="item.icon" style="color:#6495ED"></i>
-          <span>{{item.menuName}}</span>
-        </template>
-      </el-menu-item>
       <el-submenu
-        v-for="menuItem in routeListB"
+        v-for="menuItem in routeList"
         :key="menuItem.id"
         :index="menuItem.menuUrl"
       >
         <template slot="title">
-          <i v-bind:class="menuItem.icon" style="color:#4169E1"></i>
           <span>{{menuItem.menuName}}</span>
         </template>
         <el-menu-item
@@ -41,66 +29,18 @@
   </el-col>
 </template>
 
-
-  <!-- <el-col class="el-left-menu" :span="3">
-    <el-menu
-     
-      :default-active="active"
-      :active="active"
-      class="el-menu-vertical-demo"
-      router
-      unique-opened
-    >
-   
-      
-      <el-submenu v-for="menuItem in routeListB" :key="menuItem.id" :index="menuItem.menuUrl">
-        <template slot="title" >
-          
-          <span>{{menuItem.menuName}}</span>
-        </template>
-        <el-menu-item
-          v-for="item in menuItem.childPermissions"
-          :key="item.menuName"
-          :index="item.menuUrl"
-        >{{item.menuName}}</el-menu-item>
-      </el-submenu> 
-
-      <el-submenu
-        v-for="menuItem in routeListB"
-        :key="menuItem.id"
-        :index="menuItem.menuUrl"
-      >
-        <template slot="title">
-          
-          <span>{{menuItem.menuName}}</span>
-        </template>
-        <el-menu-item
-          v-for="item in menuItem.childPermissions"
-          :key="item.menuName"
-          :index="item.menuUrl"
-        >
-          {{item.menuName}} 
-        </el-menu-item>
-      </el-submenu>
-      
-    </el-menu>
-  </el-col> -->
-
-
 <script>
-const common = require("../../common.js");
-const CONSTANT = require("../../constant/constant.js");
+const common = require("../../common.js")
+const CONSTANT = require("../../constant/constant.js")
 
-const routerList = require("./nav-list.js");
+const routerList = require("./nav-list.js")
 export default {
   data() {
     return {
       active: "",
       // routeList:[],
       routeList: routerList.default.routerList,
-      heightLength: "",
-      routeListA: "",
-      routeListB: ""
+      heightLength: ""
     };
   },
 
@@ -109,26 +49,12 @@ export default {
   },
 
   mounted() {
-    console.log(this.routeList);
-    let routeListA =[],routeListB=[]
-    for(let item of this.routeList) {
-      if(item.menuUrl !== '/1' && item.menuUrl !== '/2' && item.menuUrl !== '/3') {
-        routeListA.push(item)
-      }else {
-        routeListB.push(item)
-      }
-    }
-    this.routeListA=routeListA
-    this.routeListB=routeListB
-    console.log(this.routeListA, this.routeListB)
     window.addEventListener("scroll", () => {
       let scrollHeight = document.body.scrollHeight;
       this.heightLength = scrollHeight - 80;
     });
     let active = "/" + this.$router.currentRoute.path.split("/")[1];
     this.active = active;
-    console.log(this.$router.currentRoute.path);
-    console.log(active);
   },
 
   methods: {
@@ -202,7 +128,5 @@ export default {
 }
 .el-submenu .el-menu-item {
   overflow-x: hidden;
-  background-color: yellowgreen;;
 }
 </style>
-
