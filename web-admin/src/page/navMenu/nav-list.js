@@ -32,7 +32,7 @@ export default {
      
     },
     {
-      menuUrl: '/emotion-cheats',
+      menuUrl: '/emtion-cheats',
       id: 4,
       menuName: '情感秘籍',
       icon: 'el-icon-view',

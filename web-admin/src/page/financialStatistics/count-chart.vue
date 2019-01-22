@@ -127,7 +127,6 @@ export default {
       const { data = {} } = await finance.getList(this.value);
       const { bussData } = data && data.data
       if (data.status == 200) {
-        bussData.totalSum = 99
         this.tableData = bussData;
         this.classicQuestion = bussData.classicQuestion
         this.quickQuestion = bussData.quickQuestion
