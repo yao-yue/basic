@@ -4,33 +4,41 @@
  * 
  * 聚合接口
  */
-
-import publicSysApi from './common.js'
+import finance from './finance.js'
+import common from './common.js'
 import passport from './passport.js'
-import member from './member.js'
-import city from './city.js'
-import campaign from './campaign.js'
 import swiper from './swiper.js'
-import office from './office.js'
-import order from './order.js'
-import feedBack from './feed-back.js'
 import admin from './admin.js'
-import appoint from './appoint.js'
-import meeting from './meeting.js'
-import service from './service'
+import aboutUs from './aboutUs'
+import classicQA from './classicQA'
+import emtionCheats from './emtionCheats'
+import listenOrder from './listenOrder'
+import notice from './notice'
+import testBank from './testBank'
+import testpaper from './testpaper'
+import user from './user'
+import walletInfo from './walletInfo'
+import questionSet from './questionSet'
+import quickQuestion from './quickQuestion'
+import rechargeActive from './rechargeActive'
 
 export {
+  common,
+  finance,
   publicSysApi,
   passport,
-  member,
-  city,
-  campaign,
   swiper,
-  office,
-  feedBack,
-  order,
   admin,
-  appoint,
-  meeting,
-  service
+  aboutUs,
+  classicQA,
+  emtionCheats,
+  listenOrder,
+  notice,
+  testBank,
+  testpaper,
+  user,
+  walletInfo,
+  questionSet,
+  quickQuestion,
+  rechargeActive
 }

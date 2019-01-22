@@ -4,7 +4,7 @@
 import  axios from 'axios'
 import utils from './utils'
 const Axios = axios.create({
-  baseURL: 'https://jointoffice.icebartech.com/api', // 接口地址
+  baseURL: 'https://counseling.icebartech.com/api', // 接口地址
   timeout: 10000,//设置超时时间
 })
 

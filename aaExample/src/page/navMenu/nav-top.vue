@@ -1,6 +1,6 @@
 <template>
     <header>
-        <el-col class="top-left">联合办公管理后台</el-col>
+        <el-col class="top-left">心理咨询小程序后台</el-col>
         <el-dropdown class="top-right" @command="handleCommand">
             <span class="el-dropdown-link">
                 <img :src="avatarUrl" :onerror="defaultImg">

@@ -1,6 +1,6 @@
 /**
- * author : andong cai
- * email : 1412453932@qq.com
+ * author : hbw
+ * email : 2316570512@qq.com
  * 
  * 轮播图接口请求
  */
@@ -8,38 +8,37 @@
 import HttpRequest from '../utils/axios'
 
 const swiper = {
-  // 获取轮播图列表
-  getList: (data) => {
-    const { type, ...extparam } = data
+  // 获取分页
+  getPage: data => {
     return  HttpRequest({
-      url: `/admin/banner/${type}/findPage`,
+      url: `/admin/banner/findPage`,
       method: 'POST',
-      data: extparam
+      data
     })
   },
-  // 获取轮播图详情
-  getSwiperDetail: (data) => {
+  // 新增/编辑
+  addAndEdit: data => {
     return  HttpRequest({
-      url: `/admin/banner/${data}`,
-      method: 'GET'
-    })
-  },
-  // 编辑、保存轮播图
-  save: (data) => {
-    const { type, ...extparam } = data
-    return  HttpRequest({
-      url: `/admin/banner/${type}/save`,
+      url: `/admin/banner/findPage`,
       method: 'POST',
-      data: extparam
+      data
     })
   },
-  // 删除轮播图
-  delete: (data) => {
+  // 删除
+  delete: id => {
     return  HttpRequest({
-      url: `/admin/banner/${data}`,
-      method: 'DELETE'
+      url: `/admin/banner/${id}`,
+      method: 'DELETE',
+    })
+  },
+  // 获取详情
+  getDetail:  id => {
+    return  HttpRequest({
+      url: `/admin/banner/${id}`,
+      method: 'GET',
     })
   }
+  
 }
 
 export default swiper
