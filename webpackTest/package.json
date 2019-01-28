@@ -1,0 +1,12 @@
+{
+  "name": "webpackTest",
+  "version": "1.0.0",
+  "description": "全局安装\r yarn global add webpack webpack-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
