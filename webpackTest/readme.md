@@ -30,3 +30,44 @@ style-loader 会将 css-loader 解析的结果转变成 JS 代码，运行时动
 3. 处理图片文件
 css-loader 会解析样式中用 url() 引用的文件路径，但是图片对应的 jpg/png/gif 等文件格式，webpack 处理不了
  file-loader 就是个不错的选择
+
+###要点:  enhanced-resolve 来解析代码模块的路径
+1. resolve.alias   写别名  引入模块可以简便些
+alias: {
+  utils: path.resolve(__dirname, 'src/utils') // 这里使用 path.resolve 和 __dirname 来获取绝对路径
+}
+alias: {
+  utils$: path.resolve(__dirname, 'src/utils') // 只会匹配 import 'utils'
+}
+2. resolve.extensions
+extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'],
+// 这里的顺序代表匹配后缀的优先级，例如对于 index.js 和 index.jsx，会优先选择 index.js
+import * as common from './src/utils/common' 可以省略后面的 .js .jsx
+3. resolve.modules
+
+### loader 配置
+user:  [
+    'style-loader',
+    {
+        'scss-loader',
+        options: {
+            importLoaders: 1
+        } // 用对象表示 loader，可以传递 loader 配置等
+    }
+]
+- loader 应用顺序 
+loader 按照前置 -> 行内 -> 普通 -> 后置的顺序执行。所以当我们要确保 eslint-loader 在 babel-loader 之前执行时，可以如下添加 enforce 配置：
+- ***使用noParse***
+一些不需要解析依赖（即无依赖） 的第三方大型类库等，可以通过这个字段来配置，以提高整体的构建速度。
+使用 noParse 进行忽略的模块文件中不能使用 import、require、define 等导入机制。
+module.exports = {
+  // ...
+  module: {
+    noParse: /jquery|lodash/, // 正则表达式
+
+    // 或者使用 function
+    noParse(content) {
+      return /jquery|lodash/.test(content)
+    },
+  }
+}
