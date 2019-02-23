@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+  background: #eee;
+  width: 600px;
+  height: 1000px;    
+  margin: 0 auto;
+}
+/* 高度要超过浏览器视窗大小才会有滚动效果  原始的overflow：hidden */
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  /* top: 100%; */
+  top: 0;
+}
+
+nav {
+  height: 50px;
+  background: green;
+  color: #fff;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.content {
+  margin-top: 30px;
+  background: #ddd;
+}
+
+li {
+  line-height: 40px;
+  font-size: 20px;
+}
+    
+</style>
+<body>
+    <div class="container">
+        <nav class="nav">这个是导航栏</nav>
+        <div class="content">
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+            <li>胡慧芸是小美女</li>
+        </div>
+    </div>
+</body>
+</html>
